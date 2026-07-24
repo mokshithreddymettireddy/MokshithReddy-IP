@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(145deg,#0683f0,#018b92,#8e44ad);
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:absolute;
+    top:30px;
+    font-size:42px;
+    color:rgb(156, 192, 241);
+    letter-spacing:3px;
+    text-shadow:0 0 150px rgba(250, 176, 176, 0.6);
+}
+
+.circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:50px;
+    font-weight:lighter;
+    color:white;
+
+    background:rgb(132, 193, 219);
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.4),
+        0 0 60px rgba(0,0,0,.2);
+
+    animation:move 5s ease-in-out infinite;
+    transition:.5s;
+}
+
+.circle:hover{
+    animation-play-state:paused;
+    transform:scale(1.2);
+    box-shadow:
+        0 0 40px cyan,
+        0 0 80px deepskyblue,
+        0 0 120px white;
+    cursor:pointer;
+}
+
+@keyframes move{
+
+0%{
+    transform:translateX(-350px) rotate(0deg);
+    background:#ff4d4d;
+}
+
+20%{
+    transform:translate(-150px,-80px) rotate(72deg);
+    background:#ff7b00;
+}
+
+40%{
+    transform:translate(120px,-120px) rotate(144deg);
+    background:#ffd500;
+}
+
+60%{
+    transform:translate(250px,40px) rotate(216deg);
+    background:#00d26a;
+}
+
+80%{
+    transform:translate(120px,120px) rotate(288deg);
+    background:#0077ff;
+}
+
+100%{
+    transform:translateX(-350px) rotate(360deg);
+    background:#9d4edd;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>CSS ANIMATION</h2>
+
+<div class="circle">: ></div>
+
+</body>
+</html>

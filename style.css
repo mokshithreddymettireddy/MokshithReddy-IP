@@ -1,0 +1,280 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#7ec8ff,#dff6ff);
+
+overflow-x:hidden;
+
+}
+
+/* Header */
+
+header{
+
+background:#4584e3;
+
+color:rgb(229, 208, 208);
+
+padding:20px;
+
+text-align:center;
+
+animation:fade 2s;
+
+}
+
+header h1{
+
+letter-spacing:3px;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+nav a{
+
+color:rgb(212, 174, 174);
+
+text-decoration:none;
+
+margin:20px;
+
+font-weight:bold;
+
+transition:.5s;
+
+}
+
+nav a:hover{
+
+color:rgb(250, 244, 245);
+
+transform:scale(1.2);
+
+}
+
+/* Hero */
+
+.hero{
+
+text-align:center;
+
+padding:70px;
+
+}
+
+.hero h2{
+
+font-size:45px;
+
+color:#337fcb;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin:20px;
+
+}
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+background:#e76262;
+
+color:white;
+
+font-size:20px;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.6s;
+
+}
+
+button:hover{
+
+transform:scale(1.15);
+
+background:#ed6565;
+
+box-shadow:0 0 30px hotpink;
+
+}
+
+/* Moving Bus */
+
+.road{
+
+margin-top:60px;
+
+height:120px;
+
+background:#555;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.road::before{
+
+content:"";
+
+position:absolute;
+
+top:58px;
+
+width:100%;
+
+border-top:5px dashed white;
+
+}
+
+.bus{
+
+position:absolute;
+
+font-size:70px;
+
+animation:drive 8s linear infinite;
+
+}
+
+.bus:hover{
+
+animation-play-state:paused;
+
+transform:scale(1.2);
+
+}
+
+/* Cards */
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+margin:80px;
+
+flex-wrap:wrap;
+
+}
+
+.card{
+
+width:250px;
+
+padding:30px;
+
+background:rgb(143, 201, 226);
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.6s;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+}
+
+.card:hover{
+
+transform:translateY(-15px) scale(1.08);
+
+background:#2196f3;
+
+color:white;
+
+box-shadow:0 0 30px cyan;
+
+}
+
+/* Footer */
+
+footer{
+
+background:#0d47a1;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:50px;
+
+}
+
+/* Animation */
+
+@keyframes drive{
+
+0%{
+
+left:-120px;
+
+}
+
+100%{
+
+left:100%;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 10px white;
+
+}
+
+to{
+
+text-shadow:0 0 25px cyan;
+
+}
+
+}

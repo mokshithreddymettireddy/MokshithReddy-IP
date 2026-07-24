@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Website</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Cambria;
+        }
+
+        body{
+            background:#d9f2ff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:85%;
+            max-width:900px;
+            background:white;
+            border-radius:15px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            overflow:hidden;
+        }
+
+        header{
+            background:linear-gradient(90deg,#0077ff,#00a2ff);
+            color:white;
+            padding:25px;
+            text-align:center;
+        }
+
+        header h1{
+            font-size:32px;
+        }
+
+        .marquee{
+            background:#cce6ff;
+            color:#003366;
+            padding:12px;
+            overflow:hidden;
+            white-space:nowrap;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .marquee span{
+            display:inline-block;
+            animation:scroll 12s linear infinite;
+        }
+
+        @keyframes scroll{
+            from{
+                transform:translateX(100%);
+            }
+            to{
+                transform:translateX(-100%);
+            }
+        }
+
+        .content{
+            text-align:center;
+            padding:30px;
+        }
+
+        .content p{
+            font-size:14px;
+            color:#333;
+            margin-bottom:25px;
+        }
+
+        button{
+            background:#007BFF;
+            color:white;
+            border:none;
+            padding:12px 28px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.4s;
+        }
+
+        button:hover{
+            background:#0056b3;
+            transform:scale(1.08);
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+            padding:30px;
+        }
+
+        .box{
+            background:#e6f5ff;
+            padding:25px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+            transition:0.4s;
+        }
+
+        .box:hover{
+            background:#b3e0ff;
+            transform:translateY(-8px);
+        }
+
+        .box h3{
+            color:#0056b3;
+            margin-bottom:10px;
+        }
+
+        .box p{
+            font-size:14px;
+            color:#444;
+        }
+
+        footer{
+            background:#0077cc;
+            color:white;
+            text-align:center;
+            padding:15px;
+            font-size:14px;
+        }
+
+        @media(max-width:700px){
+
+            .grid{
+                grid-template-columns:1fr;
+            }
+
+            header h1{
+                font-size:24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    <div class="marquee">
+        <span>★ Welcome to my colorful website • Learn HTML • CSS • Responsive Design • Enjoy Coding! ★</span>
+    </div>
+
+    <div class="content">
+
+        <p>
+            This webpage demonstrates HTML and CSS styling using
+            grid layouts, animations, hover effects, and responsive design.
+        </p>
+
+        <button>Explore More</button>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="box">
+            <h3>HTML</h3>
+            <p>Create structured webpages using semantic elements.</p>
+        </div>
+
+        <div class="box">
+            <h3>CSS</h3>
+            <p>Add attractive colors, layouts, and animations.</p>
+        </div>
+
+        <div class="box">
+            <h3>Responsive</h3>
+            <p>Design websites that work on all screen sizes.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 | Designed by Mokshith Reddy
+    </footer>
+
+</div>
+
+</body>
+</html>
