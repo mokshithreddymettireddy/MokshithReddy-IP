@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Interpretation Assignment - CO1</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#eef4ff;
+    color:#333;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#0056b3,#007bff);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+header h1{
+    font-size:34px;
+}
+
+header h2{
+    font-size:20px;
+    font-weight:400;
+    margin-top:8px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.card h2{
+    color:#0056b3;
+    margin-bottom:15px;
+    border-left:6px solid #007bff;
+    padding-left:12px;
+}
+
+.card h3{
+    color:#444;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+pre{
+    background:#222;
+    color:#00ff99;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+    margin-top:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table th{
+    background:#007bff;
+    color:white;
+}
+
+table th,table td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:left;
+}
+
+ul{
+    margin-left:20px;
+}
+
+code{
+    color:#d63384;
+    font-weight:bold;
+}
+
+footer{
+    background:#0056b3;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+.highlight{
+    background:#dff0ff;
+    padding:15px;
+    border-left:5px solid #007bff;
+    border-radius:6px;
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>CO1 AT2 Assignment</h1>
+
+<h2>Course Outcome CO-1 | Data Interpretation</h2>
+
+<p>Develop well-structured, standards-compliant web pages using HTML/XHTML and XML, and apply Internet protocols and HTTP communication mechanisms.</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Question 1 : HTTP Response Analysis</h2>
+
+<h3>Given Header</h3>
+
+<pre>
+HTTP/1.1 200 OK
+Date: Mon, 01 Apr 2026 10:00:00 GMT
+Content-Type: text/html
+Content-Length: -150
+Connection: keep-alive
+</pre>
+
+<h3>1. Invalid Fields</h3>
+
+<ul>
+<li><b>Content-Length: -150</b> is invalid because Content-Length cannot be negative.</li>
+<li>Other header fields are syntactically correct.</li>
+</ul>
+
+<h3>2. Issue with Content-Length</h3>
+
+<p>
+Content-Length specifies the number of bytes in the response body.
+A negative value is invalid and may cause browsers to reject the response,
+terminate the connection, or fail to load the webpage correctly.
+</p>
+
+<h3>3. Status Code Analysis</h3>
+
+<p>
+Status code <code>200 OK</code> indicates a successful response. However,
+because the header contains an invalid Content-Length value,
+the response is technically incorrect.
+</p>
+
+<h3>4. Corrected Header</h3>
+
+<pre>
+HTTP/1.1 200 OK
+Date: Mon, 01 Apr 2026 10:00:00 GMT
+Content-Type: text/html
+Content-Length: 150
+Connection: keep-alive
+</pre>
+
+</div>
+
+<div class="card">
+
+<h2>Question 2 : DOM Structure Analysis</h2>
+
+<h3>Given DOM</h3>
+
+<pre>
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Test Page&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div&gt;
+         &lt;p&gt;Hello World
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>1. Missing Elements</h3>
+
+<ul>
+<li>Missing closing tag <code>&lt;/p&gt;</code></li>
+</ul>
+
+<h3>2. Browser Interpretation</h3>
+
+<p>
+Modern browsers automatically insert the missing closing tag and repair
+the DOM before rendering.
+</p>
+
+<h3>3. Rendering Impact</h3>
+
+<ul>
+<li>Usually displays correctly.</li>
+<li>Fails HTML validation.</li>
+<li>May cause unexpected CSS or JavaScript behaviour.</li>
+</ul>
+
+<h3>4. Corrected Code</h3>
+
+<pre>
+&lt;div&gt;
+   &lt;p&gt;Hello World&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+</div>
+
+<div class="card">
+
+<h2>Question 3 : GET vs POST in Login System</h2>
+
+<table>
+
+<tr>
+
+<th>Method</th>
+
+<th>Example</th>
+
+<th>Visibility</th>
+
+<th>Security</th>
+
+</tr>
+
+<tr>
+
+<td>GET</td>
+
+<td>/login?user=admin&pass=1234</td>
+
+<td>Visible in URL</td>
+
+<td>Low</td>
+
+</tr>
+
+<tr>
+
+<td>POST</td>
+
+<td>/login</td>
+
+<td>Hidden in Request Body</td>
+
+<td>Moderate</td>
+
+</tr>
+
+</table>
+
+<h3>1. Difference</h3>
+
+<ul>
+<li>GET sends data through the URL.</li>
+<li>POST sends data inside the request body.</li>
+</ul>
+
+<h3>2. Suitable Method</h3>
+
+<p>
+POST is preferred because credentials remain outside the URL,
+making it more secure for authentication.
+</p>
+
+<h3>3. Risks of GET</h3>
+
+<ul>
+<li>Password visible in URL.</li>
+<li>Stored in browser history.</li>
+<li>Recorded in server logs.</li>
+<li>Can be shared accidentally.</li>
+</ul>
+
+<h3>4. Best Practices</h3>
+
+<ul>
+<li>Use POST.</li>
+<li>Enable HTTPS.</li>
+<li>Hash passwords.</li>
+<li>Use secure sessions.</li>
+<li>Implement CSRF protection.</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Question 4 : HTML Code Inspection</h2>
+
+<h3>Given Code</h3>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Sample&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome
+&lt;p&gt;This is a paragraph
+&lt;img src="image.jpg"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>1. Missing Closing Tags</h3>
+
+<ul>
+<li>&lt;/h1&gt;</li>
+<li>&lt;/p&gt;</li>
+</ul>
+
+<h3>2. Issues with Image Tag</h3>
+
+<ul>
+<li>Missing alt attribute.</li>
+<li>Image may not load if path is incorrect.</li>
+</ul>
+
+<h3>3. Browser Behaviour</h3>
+
+<p>
+Browsers automatically close missing tags and attempt to display
+the page normally, but HTML validation fails.
+</p>
+
+<h3>4. Corrected HTML</h3>
+
+<pre>
+&lt;h1&gt;Welcome&lt;/h1&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;img src="image.jpg"
+alt="Sample Image"&gt;
+</pre>
+
+</div>
+
+<div class="card">
+
+<h2>Question 5 : Browser-Server Communication Flow</h2>
+
+<table>
+
+<tr>
+
+<th>Step</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>User enters website URL.</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>DNS converts the domain name into an IP address.</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>Browser sends an HTTP request.</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Server processes the request.</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>Server returns the HTTP response.</td>
+
+</tr>
+
+<tr>
+
+<td>6</td>
+
+<td>Browser renders the webpage.</td>
+
+</tr>
+
+</table>
+
+<h3>Possible Delays</h3>
+
+<ul>
+<li>DNS lookup</li>
+<li>Slow Internet</li>
+<li>Server processing time</li>
+<li>Large files</li>
+<li>Browser rendering</li>
+</ul>
+
+<div class="highlight">
+
+<b>Performance Optimizations</b>
+
+<ul>
+<li>DNS caching</li>
+<li>Browser caching</li>
+<li>Compress files using GZIP</li>
+<li>Use a CDN</li>
+<li>Optimize images</li>
+<li>Keep HTTP connections alive</li>
+<li>Minify CSS and JavaScript</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Submitted By</h3>
+
+<p>Name : M.Mokshith Reddy</p>
+
+<p>Register Number : 192372373</p>
+
+<p>Course :CSA4303- Internet Programming</p>
+
+</footer>
+
+</body>
+</html>

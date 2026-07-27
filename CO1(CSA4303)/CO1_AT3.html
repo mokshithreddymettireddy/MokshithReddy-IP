@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study Assignment - Web Technology</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eaf4ff,#f8fbff);
+    color:#333;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#004aad,#0078ff);
+    color:white;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+header h1{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+header h2{
+    font-weight:400;
+    font-size:20px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:35px auto;
+}
+
+.card{
+    background:white;
+    margin-bottom:30px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+}
+
+.card h2{
+    color:#0056b3;
+    margin-bottom:20px;
+    border-left:6px solid #0078ff;
+    padding-left:12px;
+}
+
+.card h3{
+    color:#444;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.highlight{
+    background:#e8f3ff;
+    border-left:5px solid #0078ff;
+    padding:15px;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table th{
+    background:#0078ff;
+    color:white;
+}
+
+table th,
+table td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:left;
+}
+
+pre{
+    background:#222;
+    color:#00ff99;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+    margin-top:12px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+code{
+    color:#d63384;
+    font-weight:bold;
+}
+
+.correct{
+    color:green;
+    font-weight:bold;
+}
+
+footer{
+    background:#004aad;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1> CSA4303 - CO1_AT3 - Case Study Assignment</h1>
+
+<h2>Course Outcome (CO-1)</h2>
+
+<p>
+Develop well-structured, standards-compliant web pages using HTML/XHTML and XML,
+and apply Internet protocols and HTTP communication mechanisms for web content delivery.
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Case Study Scenario</h2>
+
+<p>
+A startup is developing a modern web application. During development,
+the team encounters several issues related to HTML elements,
+HTTP methods, XML syntax, and web communication protocols.
+The following case study analyses each issue and provides the correct solution
+based on web standards.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Question 1 - Video Embedding</h2>
+
+<h3>Given Options</h3>
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>HTML Tag</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>&lt;media src="video.mp4"&gt;&lt;/media&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>&lt;video src="video.mp4" controls&gt;&lt;/video&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>&lt;movie src="video.mp4"&gt;&lt;/movie&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>&lt;vid src="video.mp4"&gt;&lt;/vid&gt;</td>
+
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<p><span class="correct">Correct Answer: Option B</span></p>
+
+<p>
+The <code>&lt;video&gt;</code> element is the official HTML5 tag used to embed
+videos on a webpage. The <code>controls</code> attribute provides play,
+pause, volume and fullscreen controls for users.
+</p>
+
+</div>
+
+<h3>Example</h3>
+
+<pre>
+&lt;video src="video.mp4" controls&gt;
+&lt;/video&gt;
+</pre>
+
+</div>
+
+<div class="card">
+
+<h2>Question 2 - Form Submission Method</h2>
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>Method</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>GET</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>POST</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>PUT</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>DELETE</td>
+
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<p><span class="correct">Correct Answer: Option B (POST)</span></p>
+
+<p>
+POST securely sends user information inside the HTTP request body.
+Unlike GET, the submitted data does not appear in the URL,
+making POST the preferred method for registration forms and login pages.
+</p>
+
+</div>
+
+<h3>Advantages of POST</h3>
+
+<ul>
+
+<li>User data is hidden from the URL.</li>
+
+<li>Supports larger amounts of data.</li>
+
+<li>Suitable for passwords and personal information.</li>
+
+<li>Works securely with HTTPS.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Question 3 - Semantic Navigation Element</h2>
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>Element</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>&lt;div&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>&lt;nav&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>&lt;section&gt;</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>&lt;header&gt;</td>
+
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<p><span class="correct">Correct Answer: Option B (&lt;nav&gt;)</span></p>
+
+<p>
+The semantic <code>&lt;nav&gt;</code> element is specifically designed to contain
+website navigation links. It improves accessibility,
+SEO, and makes the webpage structure easier to understand.
+</p>
+
+</div>
+
+<h3>Example</h3>
+
+<pre>
+&lt;nav&gt;
+   &lt;a href="index.html"&gt;Home&lt;/a&gt;
+   &lt;a href="about.html"&gt;About&lt;/a&gt;
+   &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+</pre>
+
+</div>
+
+<div class="card">
+
+<h2>Question 4 - XML Syntax Analysis</h2>
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>Missing closing &lt;/note&gt; tag</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>Correct XML Syntax</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>Mismatched closing tag</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>Incomplete closing bracket</td>
+
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<p><span class="correct">Correct Answer: Option B</span></p>
+
+</div>
+
+<h3>Correct XML</h3>
+
+<pre>
+&lt;note&gt;
+   &lt;to&gt;User&lt;/to&gt;
+   &lt;from&gt;Admin&lt;/from&gt;
+&lt;/note&gt;
+</pre>
+
+<h3>Errors in Other Options</h3>
+
+<ul>
+
+<li><b>Option A:</b> Missing closing &lt;/note&gt; element.</li>
+
+<li><b>Option C:</b> Incorrect closing tag (&lt;/from&gt; instead of &lt;/to&gt;).</li>
+
+<li><b>Option D:</b> Missing closing "&gt;" symbol.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Question 5 - Web Communication Protocol</h2>
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>Protocol</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>FTP</td>
+
+<td>File Transfer</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>HTTP</td>
+
+<td>Web Communication</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>SMTP</td>
+
+<td>Email Transfer</td>
+
+</tr>
+
+<tr>
+
+<td>D</td>
+
+<td>SNMP</td>
+
+<td>Network Monitoring</td>
+
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<p><span class="correct">Correct Answer: Option B (HTTP)</span></p>
+
+<p>
+HTTP (HyperText Transfer Protocol) is the standard protocol used
+for communication between web browsers and web servers.
+It enables users to request webpages and receive responses over the Internet.
+</p>
+
+</div>
+
+<h3>Protocol Comparison</h3>
+
+<ul>
+
+<li><b>HTTP</b> → Transfers webpages.</li>
+
+<li><b>FTP</b> → Transfers files.</li>
+
+<li><b>SMTP</b> → Sends emails.</li>
+
+<li><b>SNMP</b> → Monitors network devices.</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Conclusion</h2>
+
+<p>
+This case study demonstrates the importance of following web standards while
+developing modern web applications. Using semantic HTML elements,
+correct HTTP methods, valid XML syntax, and appropriate communication
+protocols improves security, accessibility, maintainability, and overall
+performance of web applications.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Submitted By</h3>
+
+<p><strong>Name:</strong> M.Mokshith Reddy</p>
+
+<p><strong>Register Number:</strong> 192372373</p>
+
+<p><strong>Course:</strong>CSA4303 - Internet Programming</p>
+
+<p><strong>Assignment:</strong> Case Study (CO-1)</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CSA4303 - CO1_AT1 Assignment</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Trebuchet MS',Arial,sans-serif;
+}
+
+body{
+    background:#fff8f2;
+    color:#2d3436;
+    line-height:1.8;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+    background:linear-gradient(135deg,#ff6b35,#ff914d);
+    color:white;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.2);
+}
+
+header h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+header h2{
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+header p{
+    max-width:900px;
+    margin:auto;
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container{
+    width:92%;
+    max-width:1250px;
+    margin:35px auto;
+}
+
+/* ---------- CARDS ---------- */
+
+.card{
+
+    background:white;
+    border-left:8px solid #ff6b35;
+    border-radius:12px;
+    margin-bottom:35px;
+    padding:30px;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+}
+
+.card h2{
+    color:#e85d04;
+    margin-bottom:18px;
+}
+
+.card h3{
+    margin-top:22px;
+    color:#7f5539;
+}
+
+/* ---------- TABLE ---------- */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+
+}
+
+th{
+
+    background:#ff6b35;
+    color:white;
+
+}
+
+th,td{
+
+    border:1px solid #ddd;
+    padding:12px;
+
+}
+
+/* ---------- CODE ---------- */
+
+pre{
+
+    background:#1b1b1b;
+    color:#4dff91;
+    padding:18px;
+    margin-top:15px;
+    border-radius:8px;
+    overflow-x:auto;
+
+}
+
+code{
+
+    color:#d63384;
+    font-weight:bold;
+
+}
+
+/* ---------- HIGHLIGHT ---------- */
+
+.note{
+
+    background:#fff3e6;
+    border-left:6px solid #ff6b35;
+    padding:18px;
+    margin-top:15px;
+    border-radius:8px;
+
+}
+
+.correct{
+
+    color:#008000;
+    font-weight:bold;
+
+}
+
+ul{
+
+    margin-left:22px;
+
+}
+
+footer{
+
+    background:#ff6b35;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Web Technology Assignment</h1>
+
+<h2>Application-Based Questions</h2>
+
+<p>
+
+<b>Course Outcome (CO-1):</b>
+
+Develop well-structured, standards-compliant web pages using HTML/XHTML and XML,
+and apply Internet protocols and HTTP communication mechanisms for web content delivery.
+
+</p>
+
+</header>
+
+<div class="container">
+
+<!-- QUESTION 1 -->
+
+<div class="card">
+
+<h2>Question 1 - Online Symposium Portal</h2>
+
+<h3>Given HTML Structure</h3>
+
+<pre>
+&lt;form action="/register" method="POST"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="email" name="email"&gt;
+    &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>1. Missing HTML5 Semantic Elements</h3>
+
+<ul>
+
+<li>&lt;header&gt;</li>
+
+<li>&lt;main&gt;</li>
+
+<li>&lt;section&gt;</li>
+
+<li>&lt;footer&gt;</li>
+
+<li>&lt;label&gt; for each input field</li>
+
+</ul>
+
+<h3>2. Standards-Compliant Structure</h3>
+
+<pre>
+&lt;header&gt;
+   &lt;h1&gt;College Symposium Registration&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+   &lt;section&gt;
+
+      &lt;form action="/register" method="POST"&gt;
+
+         &lt;label&gt;Name&lt;/label&gt;
+         &lt;input type="text" name="name" required&gt;
+
+         &lt;label&gt;Email&lt;/label&gt;
+         &lt;input type="email" name="email" required&gt;
+
+         &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+      &lt;/form&gt;
+
+   &lt;/section&gt;
+&lt;/main&gt;
+</pre>
+
+<h3>3. HTTP Request Interpretation</h3>
+
+<div class="note">
+
+The browser sends an <b>HTTP POST</b> request to <code>/register</code>.
+The student's name and email are sent securely inside the request body instead
+of appearing in the URL.
+
+</div>
+
+<h3>4. HTTP Response Cycle</h3>
+
+<table>
+
+<tr>
+
+<th>Step</th>
+
+<th>Description</th>
+
+</tr>
+
+<tr>
+
+<td>1</td>
+
+<td>User submits the form.</td>
+
+</tr>
+
+<tr>
+
+<td>2</td>
+
+<td>Browser creates an HTTP POST request.</td>
+
+</tr>
+
+<tr>
+
+<td>3</td>
+
+<td>Server validates and stores the registration details.</td>
+
+</tr>
+
+<tr>
+
+<td>4</td>
+
+<td>Server sends an HTTP response (200 OK / 201 Created).</td>
+
+</tr>
+
+<tr>
+
+<td>5</td>
+
+<td>Browser displays the confirmation page.</td>
+
+</tr>
+
+</table>
+
+<h3>5. Usability & Accessibility Improvements</h3>
+
+<ul>
+
+<li>Add labels for all input fields.</li>
+
+<li>Use placeholders.</li>
+
+<li>Use required validation.</li>
+
+<li>Add aria-label attributes.</li>
+
+<li>Display success/error messages.</li>
+
+<li>Use HTTPS.</li>
+
+</ul>
+
+</div>
+
+<!-- QUESTION 2 -->
+
+<div class="card">
+
+<h2>Question 2 - Cross-Browser Compatibility Issue</h2>
+
+<h3>Given HTML</h3>
+
+<pre>
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Company&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div&gt;
+         &lt;h1&gt;Welcome
+         &lt;p&gt;About us
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>1. Errors</h3>
+
+<ul>
+
+<li>Missing &lt;/h1&gt;</li>
+
+<li>Missing &lt;/p&gt;</li>
+
+<li>Improper nesting</li>
+
+</ul>
+
+<h3>2. Browser Interpretation</h3>
+
+<div class="note">
+
+Modern browsers automatically insert missing closing tags.
+However, older browsers may display inconsistent layouts,
+causing rendering differences.
+
+</div>
+
+<h3>3. Missing Semantic Elements</h3>
+
+<ul>
+
+<li>&lt;header&gt;</li>
+
+<li>&lt;main&gt;</li>
+
+<li>&lt;section&gt;</li>
+
+<li>&lt;footer&gt;</li>
+
+</ul>
+
+<h3>4. Correct W3C-Compliant HTML</h3>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+   &lt;title&gt;Company&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;header&gt;
+   &lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+
+&lt;section&gt;
+   &lt;p&gt;About us&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;/main&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+<h3>5. Cross-Browser Compatibility Techniques</h3>
+
+<ul>
+
+<li>Validate HTML using W3C Validator.</li>
+
+<li>Use semantic HTML5 elements.</li>
+
+<li>Use CSS Reset or Normalize.css.</li>
+
+<li>Test in Chrome, Firefox, Edge and Safari.</li>
+
+<li>Avoid deprecated HTML tags.</li>
+
+<li>Use responsive CSS layouts.</li>
+
+</ul>
+
+</div>
+
+<!-- QUESTION 3 -->
+
+<div class="card">
+
+<h2>Question 3 - Form Submission Failure</h2>
+
+<h3>Given Configuration</h3>
+
+<pre>
+&lt;form action="/submit" method="GET"&gt;
+
+   &lt;input type="text" name="username"&gt;
+
+   &lt;input type="password" name="password"&gt;
+
+   &lt;button type="button"&gt;Login&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+
+<h3>1. Issues</h3>
+
+<ul>
+
+<li>Button type is <code>button</code> instead of <code>submit</code>.</li>
+
+<li>GET method exposes username and password in the URL.</li>
+
+<li>Password transmission is insecure.</li>
+
+</ul>
+
+<h3>2. Why HTTP Request Is Not Triggered</h3>
+
+<div class="note">
+
+The button type is <code>button</code>, which performs no action.
+Only a button with <code>type="submit"</code> automatically submits the form.
+
+</div>
+
+<h3>3. Role of GET Method</h3>
+
+<ul>
+
+<li>Sends data through the URL.</li>
+
+<li>Suitable for searching and filtering.</li>
+
+<li>Not suitable for passwords or login forms.</li>
+
+</ul>
+
+<h3>4. Correct Implementation</h3>
+
+<pre>
+&lt;form action="/submit" method="POST"&gt;
+
+   &lt;label&gt;Username&lt;/label&gt;
+   &lt;input type="text" name="username" required&gt;
+
+   &lt;label&gt;Password&lt;/label&gt;
+   &lt;input type="password" name="password" required&gt;
+
+   &lt;button type="submit"&gt;
+      Login
+   &lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+
+<h3>5. Secure Data Transmission</h3>
+
+<ul>
+
+<li>Use POST method.</li>
+
+<li>Enable HTTPS.</li>
+
+<li>Hash passwords before storing.</li>
+
+<li>Use CSRF protection.</li>
+
+<li>Validate user input.</li>
+
+<li>Implement secure session management.</li>
+
+</ul>
+
+</div>
+
+<!-- CONCLUSION -->
+
+<div class="card">
+
+<h2>Conclusion</h2>
+
+<p>
+
+This assignment demonstrates the practical application of HTML5,
+semantic elements, HTTP request-response communication,
+form submission, browser compatibility,
+and secure web development practices.
+
+Following W3C standards improves accessibility,
+security, maintainability, and ensures that web applications
+work consistently across different browsers and devices.
+
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>Application-Based Assignment</h2>
+
+<p><b>Student Name :</b>M.Mokshith Reddy</p>
+
+<p><b>Register Number :</b> 192372373</p>
+
+<p><b>Course :</b> CSA4303 - Internet Programming</p>
+
+</footer>
+
+</body>
+</html>
